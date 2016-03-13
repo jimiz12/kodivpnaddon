@@ -10,7 +10,10 @@ addonname   = addon.getAddonInfo('name')
 line1 = "This is a VPN Script"
 line2 = "It will allow you to turn on a vpn connection"
 line3 = "And turn off a vpn connection"
+### Customze to the vpn connection you want to open
+### Edit the variable vpnclient below
 vpnclient = "jimizwifi"
+### End edit area
 try:
         subprocess.call(["sudo", "nmcli", "con", "up", "id", vpnclient])
 except:
