@@ -8,12 +8,12 @@
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary lang="en">Popup Hello World</summary>
-		<description lang="en">Example Script to show hello world</description>
+		<summary lang="en">This addon will launch a vpn and close vpn connection</summary>
+		<description lang="en">AddOn to turn on your vpn and secure communcation</description>
 		<license>GNU General Public License, v2</license>
 		<language></language>
-		<forum>http://forum.kodi.tv/showthread.php?tid=209948</forum>
-		<source>https://github.com/zag2me/script.hello.world</source>
-		<email>zag@kodi.org</email>
+		<forum>https://github.com/jimiz12/kodivpnaddon/issues</forum>
+		<source>https://github.com/jimiz12/kodivpnaddon</source>
+		<email>jimiz@jimiz.net</email>
 	</extension>
 </addon>

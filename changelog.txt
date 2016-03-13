@@ -1,1 +1,4 @@
 1.0.0 Initial Release
+   Placed git repository
+   https://github.com/jimiz12/kodivpnaddon/issues - issues
+   https://github.com/jimiz12/kodivpnaddon/ - code
