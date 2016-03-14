@@ -4,8 +4,10 @@ import subprocess
 import os
 import sys
  
-addon       = xbmcaddon.Addon()
-addonname   = addon.getAddonInfo('name')
+_addon       = xbmcaddon.Addon()
+_addonname   = addon.getAddonInfo('name')
+_icon       = addon.getAddonInfo('icon')
+time = 5000  # ms
  
 line1 = "This is a VPN Script"
 line2 = "It will allow you to turn on a vpn connection"
@@ -22,6 +24,7 @@ except:
 finally:
         stat = "**** VPN Starting / On *****"
         ## print "**** VPN Starting ***"
- 
- 
-xbmcgui.Dialog().ok(addonname, line1, line2, line3, stat)
+ title= "VPN for Kodi"
+ text= "VPN is now Running"
+ xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(title, text, time, __icon__))
+xbmcgui.Dialog().ok(addonname, line1, line2, stat)
