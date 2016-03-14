@@ -3,6 +3,7 @@ import xbmcgui
 import subprocess
 import os
 import sys
+import urllib2
  
 _addon       = xbmcaddon.Addon()
 _addonname   = addon.getAddonInfo('name')
@@ -16,15 +17,30 @@ line3 = "And turn off a vpn connection"
 ### Edit the variable vpnclient below
 vpnclient = "jimizwifi"
 ### End edit area
+stat =""
 try:
         subprocess.call(["sudo", "nmcli", "con", "up", "id", vpnclient])
 except:
         e = sys.exc_info()[0]
         print e
+        stat = e
 finally:
-        stat = "**** VPN Starting / On *****"
+        stat = stat +  "**** VPN Starting / On *****"
         ## print "**** VPN Starting ***"
  title= "VPN for Kodi"
  text= "VPN is now Running"
  xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(title, text, time, __icon__))
-xbmcgui.Dialog().ok(addonname, line1, line2, stat)
+
+### lookup ip
+response = urllib2.urlopen('http://mobileipinfo.com/ip.php/')
+html = response.read()
+line4 =  "Your IP IS " + html
+
+xbmcgui.Dialog().ok(addonname, "Start VPN", line4, stat)
+
+
+
+
+
+
+
